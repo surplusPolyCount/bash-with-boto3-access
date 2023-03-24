@@ -9,10 +9,8 @@ def main():
         #Make sure you provide / in the end
         prefix = 'hospital17/'  
 
-        client = boto3.client('s3')
-        result = client.list_objects(Bucket=bucket, Prefix=prefix, Delimiter='/')
-        for o in result.get('CommonPrefixes'):
-                print('sub folder : ', o.get('Prefix'))
+        all_objects = s3.list_objects(Bucket = 'foxseq-input-bacteria') 
+        print(all_objects)
         """
         s3_client = boto3.client(
                 service_name = 's3',
