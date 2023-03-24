@@ -12,7 +12,7 @@ def main():
         client = boto3.client('s3')
         result = client.list_objects(Bucket=bucket, Prefix=prefix, Delimiter='/')
         for o in result.get('CommonPrefixes'):
-                print 'sub folder : ', o.get('Prefix')
+                print('sub folder : ', o.get('Prefix'))
         """
         s3_client = boto3.client(
                 service_name = 's3',
