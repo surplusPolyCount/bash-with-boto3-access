@@ -4,7 +4,7 @@ import sys
 def main():
         print(f"attempting access bucket {sys.argv[1]}")
 
-        s3 = boto3.resource("s3")
+        s3 = boto3.client("s3")
         bucket = 'my-bucket'
         #Make sure you provide / in the end
         prefix = 'hospital17/'  
